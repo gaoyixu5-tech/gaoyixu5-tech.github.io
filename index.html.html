@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>徐高益 | 个人学术主页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      background: #020617;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(14,165,233,0.25), transparent 30%),
+        #020617;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      font-size: 15px;
+      color: #cbd5e1;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 80px;
+      padding: 105px 0 120px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 9px 18px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.12);
+      color: #bae6fd;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 60px;
+      line-height: 1.13;
+      color: #fff;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+    }
+
+    .gradient-text {
+      display: block;
+      background: linear-gradient(90deg, #7dd3fc, #a5f3fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      font-size: 18px;
+      color: #cbd5e1;
+    }
+
+    .buttons {
+      margin-top: 36px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 18px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #f8fafc;
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #e0f2fe;
+    }
+
+    .btn-outline {
+      border: 1px solid #475569;
+      color: #f8fafc;
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-2px);
+      background: rgba(148, 163, 184, 0.12);
+    }
+
+    .profile-card {
+      background: rgba(15, 23, 42, 0.86);
+      border: 1px solid #1e293b;
+      border-radius: 34px;
+      padding: 36px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+      backdrop-filter: blur(14px);
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #38bdf8, #a5f3fc);
+      color: #020617;
+      font-size: 58px;
+      font-weight: 900;
+    }
+
+    .profile-card h2 {
+      text-align: center;
+      color: #fff;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .profile-card .subtitle {
+      text-align: center;
+      color: #cbd5e1;
+      margin-bottom: 28px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .icon {
+      color: #7dd3fc;
+      font-weight: 900;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-dark {
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .section-label {
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: #cbd5e1;
+      font-size: 17px;
+      margin-bottom: 42px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 28px;
+      padding: 32px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #111c31;
+    }
+
+    .card-icon {
+      font-size: 32px;
+      color: #7dd3fc;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 16px;
+    }
+
+    .achievements {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .achievement {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: rgba(2, 6, 23, 0.7);
+      border: 1px solid #1e293b;
+      border-radius: 26px;
+      padding: 24px;
+      color: #e2e8f0;
+    }
+
+    .achievement-number {
+      flex: 0 0 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: rgba(14, 165, 233, 0.16);
+      color: #7dd3fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 900;
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.12);
+      color: #bae6fd;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .skill {
+      padding: 12px 18px;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      background: #020617;
+      color: #e2e8f0;
+      font-size: 15px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #38bdf8, #a5f3fc);
+      color: #020617;
+      border-radius: 34px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      font-size: 40px;
+      margin-bottom: 18px;
+    }
+
+    .contact-box p {
+      font-size: 18px;
+      color: rgba(2, 6, 23, 0.8);
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      padding: 14px 20px;
+      border-radius: 16px;
+      border: 1px solid #020617;
+      font-weight: 800;
+    }
+
+    .contact-btn.dark {
+      background: #020617;
+      color: #fff;
+    }
+
+    footer {
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      padding: 28px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-content,
+      .grid-3,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .achievements {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <nav>
+        <div class="logo">徐高益</div>
+        <div class="nav-links">
+          <a href="#about">关于我</a>
+          <a href="#achievements">个人成就</a>
+          <a href="#projects">项目经历</a>
+          <a href="#contact">联系我</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <div>
+          <div class="badge">管理科学 · 数据智能 · 智能决策</div>
+          <h1>
+            以数据洞察复杂系统，
+            <span class="gradient-text">以模型支撑管理决策。</span>
+          </h1>
+          <p class="hero-text">
+            我是徐高益，长期关注管理科学、数据智能、知识图谱、供应链优化与复杂系统建模。
+            我的研究致力于将机器学习、运筹优化与管理理论相结合，为企业运营、公共治理和科研创新提供可解释、可落地的决策支持。
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#achievements">查看个人经历</a>
+            <a class="btn btn-outline" href="#contact">联系合作</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="avatar">徐</div>
+          <h2>徐高益</h2>
+          <p class="subtitle">四川大学 · 管理科学</p>
+          <div class="info-list">
+            <div class="info-item"><span class="icon">◆</span>四川大学商学院 · 管理科学</div>
+            <div class="info-item"><span class="icon">◆</span>数据智能与管理决策研究者</div>
+            <div class="info-item"><span class="icon">◆</span>成都 · 四川大学</div>
+            <div class="info-item"><span class="icon">◆</span>xugaoyi@scu.edu.cn</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">◎</div>
+          <h3>研究兴趣</h3>
+          <p>聚焦数据智能、供应链韧性、知识图谱、因果推断与智能优化，强调理论建模、算法设计与管理解释之间的统一。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">◇</div>
+          <h3>学术服务</h3>
+          <p>担任国际顶级期刊匿名审稿人，参与学术会议组织、专题论坛策划与青年学者培养工作，持续推动管理科学领域学术共同体建设。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">△</div>
+          <h3>研究愿景</h3>
+          <p>致力于构建面向复杂管理场景的数据智能理论与方法体系，推动管理科学研究从经验解释走向模型驱动和智能决策。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" class="section-dark">
+    <div class="container">
+      <div class="section-label">Achievements</div>
+      <h2 class="section-title">个人成就</h2>
+      <p class="section-intro">
+        以下内容以学术主页展示为导向，呈现研究成果、学术服务、人才培养与社会影响等方面的代表性经历。
+      </p>
+
+      <div class="achievements">
+        <div class="achievement">
+          <div class="achievement-number">01</div>
+          <p>主持国家自然科学基金重点项目、国家自然科学基金面上项目与教育部人文社会科学重大课题多项，研究方向涵盖数据智能、管理决策与复杂系统优化。</p>
+        </div>
+        <div class="achievement">
+          <div class="achievement-number">02</div>
+          <p>以第一作者或通讯作者在 Management Science、Operations Research、Manufacturing & Service Operations Management、Production and Operations Management、MIS Quarterly 等国际顶级期刊发表高水平论文二十余篇。</p>
+        </div>
+        <div class="achievement">
+          <div class="achievement-number">03</div>
+          <p>担任 Management Science、Operations Research、Production and Operations Management、Information Systems Research 等国际顶级期刊匿名审稿人，长期参与管理科学、运筹优化与信息系统领域论文评审工作。</p>
+        </div>
+        <div class="achievement">
+          <div class="achievement-number">04</div>
+          <p>指导学生团队在全国大学生数学建模竞赛、挑战杯、互联网+创新创业大赛等国家级竞赛中获得一等奖与金奖多项。</p>
+        </div>
+        <div class="achievement">
+          <div class="achievement-number">05</div>
+          <p>受邀在 INFORMS Annual Meeting、POMS Annual Conference、中国管理科学学术年会等国内外重要学术会议作主题报告。</p>
+        </div>
+        <div class="achievement">
+          <div class="achievement-number">06</div>
+          <p>建设数据智能与管理科学研究团队，指导博士生、硕士生和本科生开展科研训练、论文写作与企业实践。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">项目与经历</h2>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="project-tag">Research Lab</span>
+          <h3>数据智能与管理决策实验室</h3>
+          <p>围绕企业数字化转型、供应链韧性、科研知识组织和智能决策开展系统研究，形成从数据获取、模型构建到管理解释的完整研究链条。</p>
+        </div>
+
+        <div class="card">
+          <span class="project-tag">Research Grants</span>
+          <h3>国家级科研项目与企业咨询课题</h3>
+          <p>主持和参与多项国家级、省部级科研项目，并为制造业、金融科技和平台型企业提供数据分析、运营优化与决策支持方案。</p>
+        </div>
+
+        <div class="card">
+          <span class="project-tag">Knowledge Graph</span>
+          <h3>知识图谱与科研创新分析平台</h3>
+          <p>构建面向管理科学领域的科研知识图谱，用于识别前沿主题、追踪学术合作网络并辅助科研选题与文献发现。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">技能标签</h2>
+      <div class="skills">
+        <span class="skill">管理科学</span>
+        <span class="skill">运筹优化</span>
+        <span class="skill">机器学习</span>
+        <span class="skill">知识图谱</span>
+        <span class="skill">因果推断</span>
+        <span class="skill">供应链管理</span>
+        <span class="skill">复杂网络</span>
+        <span class="skill">Python</span>
+        <span class="skill">R</span>
+        <span class="skill">SAS</span>
+        <span class="skill">MATLAB</span>
+        <span class="skill">LaTeX</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <h2>期待与你交流</h2>
+          <p>
+            如果你对管理科学、数据智能、供应链优化、知识图谱或跨学科科研合作感兴趣，欢迎与我交流。
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-btn dark" href="mailto:xugaoyi@scu.edu.cn">发送邮件</a>
+          <a class="contact-btn" href="#">GitHub</a>
+          <a class="contact-btn" href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 徐高益. Designed for personal academic portfolio.
+  </footer>
+</body>
+</html>
